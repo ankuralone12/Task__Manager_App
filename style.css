@@ -7,7 +7,6 @@ body {
     background: #f9f9f9;
     color: #333;
     transition: all 0.3s ease-in-out;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Dark Mode */
@@ -49,7 +48,6 @@ body {
     background: #007bff;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
 }
 
 /* Task Manager Title */
@@ -72,13 +70,10 @@ body {
 
 /* Main Container */
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
     padding: 2rem;
-    max-width: 100%;
-    overflow-x: hidden;
 }
 
 /* Task Input Section */
@@ -87,8 +82,6 @@ body {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
 }
 
 /* Input Fields */
@@ -103,7 +96,6 @@ input, textarea, select {
 
 .task-options {
     display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -126,15 +118,12 @@ input, textarea, select {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
 }
 
 /* Task List */
 #history-list {
     list-style: none;
     padding: 0;
-    width: 100%;
 }
 
 #history-list li {
@@ -146,8 +135,6 @@ input, textarea, select {
     background: #f0f0f0;
     border-radius: 8px;
     color: black;
-    flex-wrap: wrap;
-    width: 100%;
 }
 
 .dark-mode #history-list li {
@@ -192,38 +179,4 @@ input, textarea, select {
 .error-message {
     color: red;
     font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (min-width: 1024px) {
-    .container {
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        height: 100vh;
-        overflow: hidden;
-    }
-    .task-form, .task-history {
-        padding: 2rem;
-        max-width: 600px;
-    }
-    #history-list li {
-        flex-direction: row;
-    }
-}
-
-@media (max-width: 1023px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        overflow-y: auto;
-    }
-    .task-form, .task-history {
-        width: 90%;
-        padding: 1.5rem;
-    }
-    #history-list li {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 }
