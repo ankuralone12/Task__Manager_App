@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header-container">
+        <h1 class="title">Task Manager</h1>
+        <button id="theme-toggle" class="toggle-btn">
+            <span id="theme-icon">🌙</span> <span id="theme-text">Dark Mode</span>
+        </button>
+    </header>
+    <main class="container">
+        <section class="task-form">
+            <h2>Add a New Task</h2>
+            <input type="text" id="task-title" placeholder="Task Title" required>
+            <textarea id="task-desc" placeholder="Task Description" required></textarea>
+            <div class="task-options">
+                <select id="task-priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <select id="task-category">
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Urgent">Urgent</option>
+                    <option value="Others">Others</option>
+                </select>
+                <input type="date" id="task-date" required>
+            </div>
+            <p id="validation-message" class="error-message"></p>
+            <button id="add-task-btn">Add Task</button>
+        </section>
+        <section class="task-history">
+            <h2>Task History</h2>
+            <input type="text" id="search-history" placeholder="Search tasks...">
+            <select id="filter-category">
+                <option value="All">All Categories</option>
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="Urgent">Urgent</option>
+                <option value="Others">Others</option>
+            </select>
+            <button id="sort-history">Sort by Date</button>
+            <ul id="history-list"></ul>
+        </section>
+    </main>
+    <div id="notification" class="notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>
